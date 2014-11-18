@@ -10,19 +10,22 @@
 Pod::Spec.new do |s|
   s.name             = "LMCircularScrollingFlowLayout"
   s.version          = "0.1.0"
-  s.summary          = "A short description of LMCircularScrollingFlowLayout."
+  s.summary          = "LMCircularScrollingFlowLayout is a UICollectionViewFlowLayout subclass that provides circular/wrapped scrolling in a UICollectionView."
   s.description      = <<-DESC
-                       An optional longer description of LMCircularScrollingFlowLayout
+LMCircularScrollingFlowLayout is a UICollectionViewFlowLayout subclass that provides circular (wrapped, infinite) scrolling behavior in a UICollectionView.
 
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+Just use in place of UICollectionViewFlowLayout when setting the layout on your collection views. You can select it as the UICollectionViewFlowLayout subclass in interface builder.
+
+Works fine with all the standard flow layout features, including multiple sections and multiple lines in a section. Works well with scrollview paging enabled or disabled.
+
+
+NOTE: This layout hasn't been tested with some of the new auto-cell sizing features included with iOS 8.0 yet. If you try it out, I'd like to hear if it works or not.
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/LMCircularScrollingFlowLayout"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "https://github.com/lintmachine/LMCircularScrollingFlowLayout"
   s.license          = 'MIT'
   s.author           = { "cdann" => "cdann@lintmachine.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/LMCircularScrollingFlowLayout.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/lintmachine/LMCircularScrollingFlowLayout.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/lintmachine'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
@@ -32,7 +35,5 @@ Pod::Spec.new do |s|
     'LMCircularScrollingFlowLayout' => ['Pod/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
 end
