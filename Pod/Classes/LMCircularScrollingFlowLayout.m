@@ -36,20 +36,18 @@
 {
     // Handle wrapping the collection view at the boundaries
     if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
-        if (self.collectionView.contentOffset.y < 0.0f) {
+        if (self.collectionView.contentOffset.y <= 0.0f) {
             [self.collectionView setContentOffset:CGPointMake(self.collectionView.contentOffset.x, [super collectionViewContentSize].height + self.minimumLineSpacing)];
         }
-        
-        if (self.collectionView.contentOffset.y > [super collectionViewContentSize].height + self.minimumLineSpacing) {
+        else if (self.collectionView.contentOffset.y >= [super collectionViewContentSize].height + self.minimumLineSpacing) {
             [self.collectionView setContentOffset:CGPointMake(self.collectionView.contentOffset.x, 0.0f)];
         }
     }
     else {
-        if (self.collectionView.contentOffset.x < 0.0f) {
+        if (self.collectionView.contentOffset.x <= 0.0f) {
             [self.collectionView setContentOffset:CGPointMake([super collectionViewContentSize].width + self.minimumLineSpacing, self.collectionView.contentOffset.y)];
         }
-        
-        if (self.collectionView.contentOffset.x > [super collectionViewContentSize].width + self.minimumLineSpacing) {
+        else if (self.collectionView.contentOffset.x >= [super collectionViewContentSize].width + self.minimumLineSpacing) {
             [self.collectionView setContentOffset:CGPointMake(0.0f, self.collectionView.contentOffset.y)];
         }
     }
